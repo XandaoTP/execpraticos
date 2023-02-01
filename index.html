@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type='text' id="opz" oninput="myFunction()"></p>
+    <p class='lista'></p>
+</body>
+
+<script>
+  
+
+/*const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+
+  function filterItems(arr, query) {
+  return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+}
+function myFunction() {
+const ipt = document.querySelector('#opz').value
+if(ipt == '') {
+  console.log('digite um valor no input')
+} else if(!filterItems.length) {
+  console.log('oi')
+}else {
+console.log(filterItems(fruits, ipt)); // ['apple', 'grapes']
+}}*/
+
+/*const fruits = ["apple", "banana", "grapes", "mango", "orange"];
+
+const filterItems = (arr, query) =>
+  arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+
+const myFunction = () => {
+  const input = document.querySelector("#opz").value;
+
+  if (!input) {
+    console.log("Please enter a value in the input");
+    return;
+  }
+
+  const filteredArray = filterItems(fruits, input);
+  if (!filteredArray.length) {
+    console.log("No matching items found");
+    return;
+  }
+
+  console.log(filteredArray);
+};*/
+
+const games = ["nintendo64","playstation4","xbox","mastersystem","megadrive"]
+
+ 
+
+
+  const myFunction = () => {
+ 
+  const myGames = document.querySelector('.lista')
+  const ipt = document.querySelector("#opz").value;
+  const filterItems = games.filter((el) => el.toLowerCase().includes(ipt.toLowerCase()))
+  myGames.innerHTML = ''
+
+  if(!ipt) {
+    myGames.innerHTML = 'Digite o nome do jogo'
+    return;
+  }
+  if(!filterItems.length) {
+    myGames.innerHTML = 'Nenhum jogo com esse nome foi encontrado';
+    return;
+  }
+  /*filterItems.forEach(function(nome, i){
+    
+    myGames.innerHTML += ` 
+    
+    <p>${nome}</p> 
+    
+    ` 
+  })*/
+  /*for(var i = 0; i < filterItems.length; i++) {
+    console.log(i)  
+    myGames.innerHTML += ` 
+    
+    <p>${filterItems[i]}</p> 
+    
+    `   
+  }*/
+
+  filterItems.map(function(item) {
+    myGames.innerHTML += ` 
+    
+    <p>${item}</p> 
+    
+    `  
+  })
+  }
+
+  
+
+
+
+</script>
+</html>
