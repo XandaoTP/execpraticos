@@ -1,0 +1,27 @@
+<html>
+    <body>
+
+    </body>
+    <script>
+        var request = new XMLHttpRequest();
+        request.open('get','https://jsonplaceholder.typicode.com/todos', true);
+
+        request.onload = function() {
+            if(this.status >= 20 && this.status <400) {
+                var data = JSON.parse(this.response)
+                console.log(data)
+                data.map(item =>{
+                    console.log(item.title)
+                })
+            } else {
+                
+            }
+        }    
+            request.onerror = function(){
+
+        }
+        request.send();
+
+       
+    </script>
+</html>
