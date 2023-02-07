@@ -14,7 +14,7 @@
                     console.log(item.title)
                 })
             } else {
-                
+                //erro
             }
         }    
             request.onerror = function(){
@@ -22,6 +22,22 @@
         }
         request.send();
 
-       
+        let postAjax = { 
+            id: 101, 
+            title: "POST AJAX", 
+            body: "test ajax"
+        }
+
+        let data = JSON.stringify(postAjax)
+        let http = new XMLHttpRequest()
+        http.open('POST', 'https://jsonplaceholder.typicode.com/posts', true)
+        http.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+        http.send(data);
+        http.onload = function () {
+            if(http.status === 201) {
+                console.log(this.response) 
+    }
+}
+
     </script>
 </html>
